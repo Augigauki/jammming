@@ -1,0 +1,30 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Clash Grotesk', sans-serif;
+}
+
+:root{
+  --darkshades: #221d3e;
+  --darkaccent: #4f8164;
+  --mainbrand: #7fd4a5;
+  --lightaccent: #5b8f72;
+  --lightshades: #fffefe;
+
+}
+
+body{
+  background-color: var(--darkshades);
+  color: var(--lightshades);
+  
+}
+
+h1{
+  font-size: 3em;
+  font-weight: 500;
+}
+
+a{
+  color: inherit;
+}
