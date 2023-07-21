@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import SearchResults from './SearchResults';
+import styles from '../styles/modules/searchbar.module.css';
 import axios from 'axios';
 
 const SearchBar = (props) => {
@@ -9,8 +10,7 @@ const SearchBar = (props) => {
     const access_token = props.token;
 
     useEffect(() => {
-        const searchTrack = async () => {
-            
+        const searchTrack = async () => {   
             if(searchKey !== ''){
                 try{
                     const {data} = await axios.get("https://api.spotify.com/v1/search", {
@@ -20,7 +20,8 @@ const SearchBar = (props) => {
                     },
                     params: {
                         q: searchKey,
-                        type: 'track'
+                        type: 'track',
+                        limit: 20
                     }
                 });
     
@@ -29,10 +30,12 @@ const SearchBar = (props) => {
                     console.error(error);
                 }
             }
-            
-    }
+            else{
+                setTracks([]);
+            }  
+        }
 
-    searchTrack();
+        searchTrack();
     }, [searchKey, access_token]);
 
     
@@ -47,14 +50,14 @@ const SearchBar = (props) => {
                 id="search"
                 type="text"
                 placeholder="Search for tracks"
-                className="SearchInput"
+                className={styles.searchInput}
                 value={searchKey}
                 onChange={handleSearch}
             />
             {/* <button className="searchButton" onClick={searchTrack}>Search!</button> */}
             {tracks.length > 0 && searchKey !== '' ? 
                 <SearchResults tracks={tracks} searchKey={searchKey}/>
-                : <p>Do a search bro I dare you come on bro bet you won't</p>}
+                : <></>}
         </div>
     );
 }

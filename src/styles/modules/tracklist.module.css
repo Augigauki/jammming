@@ -1,0 +1,19 @@
+.resultWrapper{
+    max-height: 75vh;
+    overflow-y: scroll;
+    background-color: #09192b;
+    padding: 1.25rem;
+    border-radius: 2rem;
+    
+}
+
+.resultWrapper::-webkit-scrollbar{
+    background-color: transparent;
+    width: 8px;
+}
+
+.resultWrapper::-webkit-scrollbar-thumb{
+    background-color: var(--mainbrand);
+    border-radius: 250rem;
+    
+}

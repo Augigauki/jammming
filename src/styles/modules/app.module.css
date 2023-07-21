@@ -1,0 +1,27 @@
+.container{
+    max-width: 1020px;
+    margin: 2rem auto 0;
+}
+
+.siteTitle{
+    margin-bottom: 1.5rem;
+}
+
+.logout{
+    border-radius: 250rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border: none;
+    position: fixed;
+    bottom: 1rem;
+}
+
+.login{
+    border-radius: 250rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border: none;
+    background-color: var(--mainbrand);
+    color: var(--darkshades);
+    text-decoration: none;
+}

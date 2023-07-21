@@ -1,34 +1,32 @@
-import React, {useState} from 'react';
+import React from "react";
+import styles from "../styles/modules/track.module.css";
 
-const Track = () => {
-    const [id, setId] = useState(0);
-    const [name, setName] = useState('');
-    const [album, setAlbum] = useState('');
-    const [artwork, setArtwork] = useState('');
-    const [artist, setArtist] = useState ('');
-    const [duration, setDuration] = useState(0);
-    const [explicit, setExplicit] = useState(false);
-    const [url, setUrl] = useState('');
-    const [data, setData] = useState('');
-    const [discNumber, setDiscNumber] = useState(0);
-
-   /*  const track = {
-        name: name,
-        album: album,
-        artwork: artwork,
-        artist: artist,
-        duration: duration,
-        explicit: explicit,
-        url: url,
-        discNumber: discNumber
-    } */
-
-    return (
-        <div>
-            <h3>{name}</h3>
+const Track = ({ track }) => {
+  return (
+    
+      <div className={styles.trackResult} key={track.id}>
+        <img
+          className={styles.albumArt}
+          src={track.album.images[0].url}
+          alt={track.album.name}
+        />
+        <div className={styles.trackInfoWrapper}>
+          <div>
+            <h6>Title</h6>
+            <h3>{track.name}</h3>
+          </div>
+          <div>
+            <h6>Artist</h6>
+            <h3>{track.artists[0].name}</h3>
+          </div>
+          <div>
+            <h6>Album</h6>
+            <h3>{track.album.name}</h3>
+          </div>
         </div>
-    );
-}
-
+      </div>
+    
+  );
+};
 
 export default Track;

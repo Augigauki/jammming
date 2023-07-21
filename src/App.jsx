@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-//import './App.css';
+import styles from './styles/modules/app.module.css';
 import SearchBar from './components/SearchBar';
 
 const App = () => {
@@ -31,14 +31,14 @@ const App = () => {
   }
 
   return (
-    <div>
-      <h1>Spotify Playlist Builder</h1>
+    <div className={styles.container}>
+      <h1 className={styles.siteTitle}>Spotify Playlist Builder</h1>
       {!token ? 
-        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
+        <a className={styles.login} href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
         :
         <div>
           <SearchBar token={token}/>
-          <button onClick={logout}>Logout</button>
+          <button className={styles.logout} onClick={logout}>Logout</button>
         </div>
       }
       

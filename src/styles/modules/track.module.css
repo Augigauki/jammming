@@ -1,0 +1,25 @@
+.trackResult{
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.albumArt{
+    border-radius: 1rem;
+    width: 5rem;
+}
+
+.trackInfoWrapper{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin-left: 0.5rem;
+}
+
+.trackInfoWrapper > *{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}

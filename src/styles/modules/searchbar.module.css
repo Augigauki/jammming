@@ -1,0 +1,21 @@
+.searchInput{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 250rem;
+    border: none;
+    background-color: var(--mainbrand);
+    color: var(--darkshades);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.searchInput::placeholder{
+    color: var(--darkshades);
+    opacity: 80%;
+    font-weight: 400;
+}
+
+.searchInput:focus{
+    outline: 2px solid #eaf2faa0;
+}
