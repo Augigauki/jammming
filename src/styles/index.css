@@ -29,8 +29,18 @@ h1{
   line-height: 1;
 }
 
+h2{
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
 h3{
   font-size: 1.4rem;
+  line-height: 1;
+}
+
+h4{
+  font-size: 1.2rem;
   line-height: 1;
 }
 
@@ -40,6 +50,10 @@ h6{
   font-weight: 550;
   letter-spacing: 1px;
   line-height: 1;
+}
+
+p{
+  font-size: 1rem;
 }
 
 a{

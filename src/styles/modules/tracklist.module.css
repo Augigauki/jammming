@@ -1,9 +1,8 @@
 .resultWrapper{
     max-height: 75vh;
     overflow-y: scroll;
-    background-color: #09192b;
-    padding: 1.25rem;
-    border-radius: 2rem;
+    width: 100%;
+    /* background-color: #09192b; */
     
 }
 
@@ -13,7 +12,70 @@
 }
 
 .resultWrapper::-webkit-scrollbar-thumb{
-    background-color: var(--mainbrand);
+    background-color: var(--lightshades);
     border-radius: 250rem;
     
+    
 }
+
+thead{
+    position: sticky;
+    top: 0;
+    /* height: 4rem; */
+    background-color: var(--darkshades);
+}
+
+tbody{
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: start;
+}
+
+/* Image */
+.albumArtCol{
+    width: 20%;
+}
+
+/* Track */
+.trackCol{
+    width: 25%;
+    padding-left: 1.5rem 0;
+}
+
+/* Artist */
+.artistCol{
+    width: 25%;
+    padding: 1.5rem 0;
+}
+
+/* Album */
+.albumCol{
+    width: 25%;
+}
+
+/* Button */
+.addCol{
+    width: 10%;
+    text-align: end;
+    padding-right: 1rem;
+}
+
+table, th, td{
+    text-align: start;
+    border-spacing: 1rem;
+}
+
+table th{
+    margin-bottom: 1rem;
+}
+
+/* tbody tr:nth-child(even){
+    background-color: #09192b;
+} */
+

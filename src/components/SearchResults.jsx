@@ -4,7 +4,7 @@ import Tracklist from "./Tracklist";
 const SearchResults = ({ tracks }) => {
   return (
     <div>
-        <Tracklist tracks={tracks}/>
+        <Tracklist tracks={tracks} context="search"/>
     </div>
       
   );

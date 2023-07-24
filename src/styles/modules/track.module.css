@@ -6,9 +6,9 @@
 }
 
 .albumArt{
-    border-radius: 1rem;
-    width: 5rem;
-}
+    border-radius: 0.15rem;
+    width: 100%;
+} 
 
 .trackInfoWrapper{
     display: flex;
@@ -23,3 +23,78 @@
     flex-direction: column;
     gap: 0.3rem;
 }
+
+/* .trackInfoWrapper > .addbutton{
+    width: auto;
+} */
+
+.addButton{
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.addButton > button{
+    padding: 0.9rem 1.25rem 0.8rem;
+    border-radius: 125rem;
+    border: none;
+    background-color: var(--mainbrand);
+    cursor: pointer;
+    line-height: 0;
+    font-weight: 450;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.added{
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.added > button{
+    padding: 0.9rem 1.25rem 0.8rem;
+    border-radius: 125rem;
+    border: none;
+    background-color: var(--lightshades);
+    line-height: 0;
+    font-weight: 450;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Image */
+.albumArtCol{
+    width: 20%;
+    padding: 1.5rem 0;
+}
+
+/* Track */
+.trackCol{
+    width: 25%;
+    padding: 0 1.5rem;
+}
+
+/* Artist */
+.artistCol{
+    width: 25%;
+    padding: 0 1.5rem;
+}
+
+/* Album */
+.albumCol{
+    width: 25%;
+    
+}
+
+/* Button */
+.addCol{
+    width: 10%;
+    text-align: end;
+    padding-right: 1rem;
+}
+
+
+
+
+

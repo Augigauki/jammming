@@ -1,0 +1,13 @@
+.navWrapper{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.navWrapper > * {
+    padding: 0.4rem 1.25rem;
+    background-color: var(--mainbrand);
+    color: var(--darkshades);
+    border-radius: 125rem;
+    line-height: 1;
+}
