@@ -2,7 +2,10 @@ import React from "react";
 import Track from "./Track";
 import styles from "../styles/modules/tracklist.module.css";
 
-const Tracklist = ({ tracks, context }) => {
+const Tracklist = ({ tracks, context, onAdded, removeTrack }) => {
+	
+	
+
 	return (
 		<div className={styles.resultWrapper}>
 			<table>
@@ -23,7 +26,8 @@ const Tracklist = ({ tracks, context }) => {
 				</thead>
 				<tbody>
 					{tracks.map((track) => {
-						return <Track track={track} context={context} key={track.id}/>;
+						return <Track track={track} context={context} key={track.id} onAdded={onAdded} removeTrack={removeTrack}/>;
+						
 					})}
 				</tbody>
 			</table>

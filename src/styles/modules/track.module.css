@@ -63,6 +63,24 @@
     margin: 0;
 }
 
+.remove{
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.remove > button{
+    background-color: #ff4b33;
+    border: none;
+    border-radius: 125rem;
+    padding: 0.9rem 1.25rem 0.8rem;
+    color: #09192b;
+    line-height: 0;
+    font-weight: 450;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
 /* Image */
 .albumArtCol{
     width: 20%;

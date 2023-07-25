@@ -1,0 +1,23 @@
+.header{
+    display: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title{
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    color: var(--lightshades);
+}
+
+.export > button{
+    background-color: #0df2d7;
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 450;
+    line-height: 1;
+    border: none;
+    border-radius: 125rem;
+    cursor: pointer;
+}

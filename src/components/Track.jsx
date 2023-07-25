@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../styles/modules/track.module.css";
-import Playlist from './Playlist';
 
-const Track = ({ track, context }) => {
+const Track = ({ track, context, onAdded, removeTrack }) => {
 	const [added, setAdded] = useState(false);
 
-	const handleAdd = (e) => {
-    setAdded(true);
-  };
+	const handleAdd = () => {
+		setAdded(true);
+		onAdded((prev) => [...prev, track]);
+	};
 
-  useEffect(() => {
-    
-  }, [track])
+	const handleRemove = () => {
+		setAdded(false);
+		removeTrack(track);
+		
+	}
 
 	return (
 		<tr className={styles.resultRow}>
@@ -32,24 +34,29 @@ const Track = ({ track, context }) => {
 				<h4>{track.album.name}</h4>
 			</td>
 			<td className={styles.addCol}>
-        {context === 'search' ? 
-          <div>
-            {added ? (
-            <div className={styles.added}>
-              <button>Added!</button>
-            </div>
-          ) : (
-            <div className={styles.addButton}>
-              <button onClick={handleAdd}>Add</button>
-            </div>
-          )}
-          </div>
-          : <></>
-        }
-				
+				{context === "search" ? (
+					<div>
+						{added ? (
+							<div className={styles.added}>
+								<button>Added!</button>
+							</div>
+						) : (
+							<div className={styles.addButton}>
+								<button onClick={handleAdd}>Add</button>
+								
+							</div>
+						)}
+					</div>
+				) : (
+					<div className={styles.remove}>
+						<button onClick={handleRemove}>Remove</button>
+					</div>
+				)}
 			</td>
 		</tr>
 	);
 };
+
+
 
 export default Track;

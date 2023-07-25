@@ -10,4 +10,14 @@
     color: var(--darkshades);
     border-radius: 125rem;
     line-height: 1;
+    cursor: pointer;
+}
+
+.createNew{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.createNew:hover{
+    text-decoration: none;
 }

@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../styles/modules/nav.module.css";
+import Profile from "./Profile";
 import SearchBar from "./SearchBar";
 import Playlist from "./Playlist";
 
-const Nav = ({ token }) => {
+const Nav = ({ token, setPlaylistName, name, plCount, setPlCount, added, setAdded, setUserid, exportPlaylist }) => {
 	const [search, setSearch] = useState(false);
 	const [playlist, setPlaylist] = useState(false);
 	const [home, setHome] = useState(true);
+	
 
 	const handleSearch = () => {
 		setPlaylist(false);
@@ -26,6 +28,12 @@ const Nav = ({ token }) => {
 		setPlaylist(false);
 	};
 
+	const removeTrack = track => {
+		setAdded((current) => {
+			return current.filter((toRemove) => toRemove.id !== track.id)
+		})
+	};
+
 	return (
 		<div>
 			<div className={styles.navWrapper}>
@@ -34,12 +42,21 @@ const Nav = ({ token }) => {
 				<p onClick={handlePlaylist}>Playlist</p>
 			</div>
 
-			{search ? <SearchBar token={token} /> : <></>}
-			{playlist ? <Playlist /> : <></>}
-            {home ? <div>
-            <h2>Build your own playlist and export it to your Spotify account!</h2>
-            <p>Get started by creating a new playlist</p>
-          </div> : <></>}
+			{search ? <SearchBar token={token} onAdded={setAdded}/> : <></>}
+			{playlist ? <Playlist tracks={added} setPlaylistName={setPlaylistName} name={name} plCount={plCount} setPlCount={setPlCount} removeTrack={removeTrack} exportPlaylist={exportPlaylist}/> : <></>}
+			{home ? (
+				<div>
+					<Profile token={token} setUserid={setUserid}/>
+					<br />
+					<h3>
+						Build your own playlist and export it to your Spotify
+						account
+					</h3>
+					
+				</div>
+			) : (
+				<></>
+			)}
 		</div>
 	);
 };

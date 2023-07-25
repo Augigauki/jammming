@@ -54,9 +54,8 @@ const SearchBar = (props) => {
 				value={searchKey}
 				onChange={handleSearch}
 			/>
-			{/* <button className="searchButton" onClick={searchTrack}>Search!</button> */}
 			{tracks.length > 0 && searchKey !== "" ? (
-				<SearchResults tracks={tracks} searchKey={searchKey} />
+				<SearchResults tracks={tracks} searchKey={searchKey} onAdded={props.onAdded}/>
 			) : (
 				<></>
 			)}

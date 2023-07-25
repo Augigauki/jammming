@@ -1,0 +1,10 @@
+.userImg{
+    border-radius: 125rem;
+    width: 4rem;
+}
+
+.profileWrapper{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
